@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wishlist Page</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
+    <style>
+        .product-card:hover .product-overlay {
+            opacity: 1;
+        }
+
+        .product-overlay {
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .add-to-cart-overlay {
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .product-card:hover .add-to-cart-overlay {
+            opacity: 1;
+        }
+
+        .product-card:hover {
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 20%), 0 10px 10px -5px rgb(0 0 0 / 10%);
+        }
+
+        .textbox {
+            top: 60%;
+            transform: translateY(-30%);
+        }
+
+        .price-info {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            justify-content: center;
+            width: 120px;
+        }
+
+        .product-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .price-info p {
+            margin: 0;
+        }
+
+        .bg-cool-blue {
+            background-color: #1e3a8a;
+        }
+
+        .text-cool-blue {
+            color: #1e3a8a;
+        }
+
+        .bg-cool-green {
+            background-color: #10b981;
+        }
+
+        .text-cool-green {
+            color: #10b981;
+        }
+
+        .bg-cool-orange {
+            background-color: #f97316;
+        }
+
+        .text-cool-orange {
+            color: #f97316;
+        }
+
+        .hover-bg-cool-green:hover {
+            background-color: #059669;
+        }
+
+        .hover-bg-cool-blue:hover {
+            background-color: #1d4ed8;
+        }
+
+        .bg-cool-red {
+            background-color: #dc2626;
+        }
+
+        .hover-bg-cool-red:hover {
+            background-color: #b91c1c;
+        }
+
+        .fixed-size {
+            width: 96px;
+            height: 96px;
+        }
+
+        .fixed-size img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100 p-8">
+    <div class="max-w-7xl mx-auto mb-8">
+        <div class="relative bg-gray-50 rounded-lg overflow-hidden h-96">
+            <img src="./cover.jpg" alt="Wish List" class="w-full h-full object-cover">
+            <div class="textbox absolute inset-0 flex flex-col justify-center items-center text-white p-4 bg-black bg-opacity-50">
+                <h1 class="text-4xl font-bold text-cool-orange">Hi, username</h1>
+                <p class="text-lg">Check out your wish list</p>
+                <button class="mt-4 px-6 py-3 bg-cool-green text-white font-semibold rounded-lg shadow hover-bg-cool-green transition">Learn More</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="max-w-7xl mx-auto">
+        <div class="flex justify-between items-center mb-8">
+            <h1 class="text-3xl font-bold">Wishlist <span class="text-gray-500">(4)</span></h1>
+            <button class="px-6 py-3 bg-cool-blue text-white font-semibold rounded-lg shadow hover-bg-cool-green transition">Move All To Cart <i class="fa-solid fa-cart-shopping ml-2"></i></button>
+        </div>
+        <div class="space-y-4">
+            <div class="bg-white p-6 rounded-lg shadow-md flex justify-between items-center product-card relative">
+                <div class="flex items-center space-x-6 relative">
+                    <div class="fixed-size">
+                        <img src="./iPhone-14-Pro-Max-PNG.png" alt="Iphone">
+                    </div>
+                    <div>
+                        <h2 class="text-lg font-semibold">Iphone 14 pro</h2>
+                        <div class="flex items-center justify-center mt-2">
+                            <div class="text-yellow-500 mr-1 text-2xs">
+                                <i class="fa-solid fa-star" style="color: #f6c800;"></i>
+                                <i class="fa-solid fa-star" style="color: #f6c800;"></i>
+                                <i class="fa-solid fa-star" style="color: #f6c800;"></i>
+                                <i class="fa-solid fa-star" style="color: #f6c800;"></i>
+                                <i class="fa-solid fa-star-half" style="color: #f6c800;"></i>
+                            </div>
+                            <button class="text-gray-500 text-2xs">(97)</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="price-info">
+                    <p class="text-2xl font-bold text-cool-black">$899</p>
+                    <p class="text-red-500 line-through">$999</p>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <button class="bg-cool-blue text-white p-3 rounded-lg shadow hover-bg-cool-blue transition">
+                        <i class="fa-solid fa-cart-shopping"><span class="ml-1">+</span></i>
+                    </button>
+                    <button class="bg-cool-red text-white p-3 rounded-lg shadow hover-bg-cool-red transition">
+                        <i class="fa-solid fa-trash-alt"></i>
+                    </button>
+                </div>
+                <div class="absolute top-0 left-0 bg-cool-red text-white text-xs font-bold px-2 py-1 rounded-br-lg">-10%</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
